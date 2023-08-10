@@ -1,0 +1,22 @@
+{
+  "streams": [
+    {
+      "title": "First stream",
+      "description": "Stream from Alin's desktop",
+      "userId": "112074436874433184091",
+      "id": 1
+    },
+    {
+      "title": "Second stream",
+      "description": "lorem",
+      "userId": "112074436874433184091",
+      "id": 2
+    },
+    {
+      "title": "Apples",
+      "description": "2",
+      "userId": "112074436874433184091",
+      "id": 3
+    }
+  ]
+}
