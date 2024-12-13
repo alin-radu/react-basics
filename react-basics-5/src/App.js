@@ -18,7 +18,7 @@ const ParentComponent = ({ count, increaseCounter, children }) => {
       <p className="counter">counter: {count}</p>
       <div className="flex justify-center mt-4">
         <button className="button" onClick={increaseCounter}>
-          Increment Parent Counter
+          Increment Counter
         </button>
       </div>
       {children}
@@ -35,7 +35,7 @@ const ChildComponent = () => {
       <p className="counter">counter: {count}</p>
       <div className="flex justify-center mt-4">
         <button className="button" onClick={increaseCounter}>
-          Increment Child Counter
+          Increment Counter
         </button>
       </div>
     </div>
@@ -45,7 +45,7 @@ const ChildComponent = () => {
 const PageLayout = (props) => (
   <div className="container">
     <div className="card">
-      <p className="title">useService Multi-Instance Demo</p>
+      <p className="title">useService multiple instances Demo</p>
       <p className="title">PageComponent</p>
       <div className="flex flex-col items-center mt-4 gap-4">{props.children}</div>
     </div>
