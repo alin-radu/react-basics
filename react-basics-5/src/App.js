@@ -5,39 +5,53 @@ const useCounterService = () => {
 
   const increaseCounter = () => setCount(count + 1);
 
+  const resetCounter = () => setCount(0);
+
   return {
     count,
     increaseCounter,
+    resetCounter,
   };
 };
 
-const ParentComponent = ({ count, increaseCounter, children }) => {
-  return (
-    <div className="box">
-      <p className="text-center text-gray-700 font-medium">ParentComponent</p>
-      <p className="counter">counter: {count}</p>
-      <div className="flex justify-center mt-4">
-        <button className="button" onClick={increaseCounter}>
-          Increment Counter
-        </button>
-      </div>
-      {children}
+const CounterUI = ({ title, count, increaseCounter, resetCounter }) => (
+  <>
+    <p className="text-center text-gray-700 font-medium">{title}</p>
+    <p className="counter">counter: {count}</p>
+    <div className="flex justify-center mt-4">
+      <button className="button" onClick={increaseCounter}>
+        Increment Counter
+      </button>
+      <button className="button ml-6" onClick={resetCounter}>
+        Reset Counter
+      </button>
     </div>
-  );
-};
+  </>
+);
+
+const ParentComponent = ({ count, increaseCounter, resetCounter, children }) => (
+  <div className="box">
+    <CounterUI
+      title={'ParentComponent'}
+      count={count}
+      increaseCounter={increaseCounter}
+      resetCounter={resetCounter}
+    />
+    {children}
+  </div>
+);
 
 const ChildComponent = () => {
-  const { count, increaseCounter } = useCounterService();
+  const { count, increaseCounter, resetCounter } = useCounterService();
 
   return (
     <div className="child-box box">
-      <p className="text-center text-gray-700 font-medium">ChildComponent</p>
-      <p className="counter">counter: {count}</p>
-      <div className="flex justify-center mt-4">
-        <button className="button" onClick={increaseCounter}>
-          Increment Counter
-        </button>
-      </div>
+      <CounterUI
+        title={'ChildComponent'}
+        count={count}
+        increaseCounter={increaseCounter}
+        resetCounter={resetCounter}
+      />
     </div>
   );
 };
@@ -53,11 +67,15 @@ const PageLayout = (props) => (
 );
 
 const PageComponent = () => {
-  const { count, increaseCounter } = useCounterService();
+  const { count, increaseCounter, resetCounter } = useCounterService();
 
   return (
     <PageLayout>
-      <ParentComponent count={count} increaseCounter={increaseCounter}>
+      <ParentComponent
+        count={count}
+        increaseCounter={increaseCounter}
+        resetCounter={resetCounter}
+      >
         <ChildComponent />
       </ParentComponent>
     </PageLayout>
