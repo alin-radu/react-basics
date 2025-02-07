@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { PageLayout } from './PageLayout';
+import { PageLayout } from '../components/PageLayout';
 
 const useFetchDataService = () => {
   const [data, setData] = useState(null);
@@ -10,7 +10,7 @@ const useFetchDataService = () => {
     setTimeout(() => {
       setData('Hello World');
       console.log('%c-> developmentConsole: getData | COMPLETED ', 'color:#77dcfd');
-    }, 5000);
+    }, 1000);
   };
 
   return {

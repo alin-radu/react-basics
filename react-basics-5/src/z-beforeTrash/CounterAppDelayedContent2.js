@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { PageLayout } from './PageLayout';
+import { PageLayout } from '../components/PageLayout';
 
 const DISPLAY_LOADING_CUSTOM = 'onDisplayLogingCustom';
 const HIDE_LOADING_CUSTOM = 'onHideLogingCustom';
@@ -94,8 +94,6 @@ const ParentComponent = ({ data, children }) => (
 
 export const PageComponent = () => {
   const { data, getData, isLoading } = useFetchDataService('PageComponent');
-  console.log('%c-> developmentConsole: data= ', 'color:#77dcfd', data);
-  console.log('%c-> developmentConsole: isLoading= ', 'color:#77dcfd', isLoading);
 
   useEffect(() => {
     getData();

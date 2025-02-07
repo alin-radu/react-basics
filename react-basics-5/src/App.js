@@ -1,16 +1,18 @@
 /* eslint-disable no-unused-vars */
-import IsOnlineApp from './IsOnlineApp';
-import CounterAppStateNotSync from './CounterAppStateNotSync';
-import CounterAppDelayedContent1 from './CounterAppDelayedContent1';
-import CounterAppDelayedContent2 from './CounterAppDelayedContent2';
-import CounterAppExpensiveCalculation from './CounterAppExpensiveCalculation';
+import IsOnlineAppBefore from './apps/IsOnlineAppBefore';
+import IsOnlineAppAfter from './apps/IsOnlineAppAfter';
+import CounterAppStateNotSynchronized from './apps/CounterAppStateNotSynchronized';
+import FetchAppDelayedContent from './apps/FetchAppDelayedContent';
+import FetchAppDuplicateNetworkRequests from './apps/FetchAppDuplicateNetworkRequests';
+import CounterAppExpensiveCalculation from './apps/CounterAppExpensiveCalculation';
 
 const App = () => (
   <>
-    {/* <IsOnlineApp /> */}
-    {/* <CounterAppStateNotSync /> */}
-    {/* <CounterAppDelayedContent1 /> */}
-    <CounterAppDelayedContent2 />
+    <IsOnlineAppBefore />
+    {/* <IsOnlineAppAfter /> */}
+    {/* <CounterAppStateNotSynchronized /> */}
+    {/* <FetchAppDelayedContent /> */}
+    {/* <FetchAppDuplicateNetworkRequests /> */}
     {/* <CounterAppExpensiveCalculation /> */}
   </>
 );

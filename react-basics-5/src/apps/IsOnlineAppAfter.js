@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { PageLayout } from './PageLayout';
+import { PageLayout } from '../components/PageLayout';
 
 const CLICK_EVENT = 'onClickCustomEvent';
 
@@ -67,7 +67,7 @@ const PageComponent = () => {
   const { isOnline, toggleIsOnline } = useIsOnlineService();
 
   return (
-    <PageLayout subtitle="IsOnlineApp">
+    <PageLayout subtitle="IsOnlineAppAfter">
       <ParentComponent isOnline={isOnline} toggleIsOnline={toggleIsOnline}>
         <ChildComponent />
       </ParentComponent>

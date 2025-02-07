@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { PageLayout } from './PageLayout';
+import { PageLayout } from '../components/PageLayout';
 
 const useCounterService = () => {
   const [count, setCount] = useState(0);
@@ -65,7 +65,7 @@ export const PageComponent = () => {
   return (
     <PageLayout
       title={'useService multiple instances Demo'}
-      subtitle={'CounterAppStateNotSync'}
+      subtitle={'CounterAppStateNotSynchronized'}
     >
       <ParentComponent
         count={count}
